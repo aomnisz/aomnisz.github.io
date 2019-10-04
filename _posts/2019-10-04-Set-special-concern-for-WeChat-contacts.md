@@ -27,7 +27,7 @@ tags:
 
 ### 2.2 Tasker APP
 
-我们需要借助第三方的软件来实现提醒功能，这里选择的软件是 Tasker ([官网地址](https://tasker.joaoapps.com/))。这个软件的功能和 iOS 的捷径差不多，但比捷径要强大得多，毕竟是在毕竟开放的 Android 系统。这个软件在 [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) 上售价 2.99 刀，在国内[豌豆荚](https://www.wandoujia.com/apps/237829)等市场能免费下载，不过还是希望大家如果有能力支持正版的话就尽量支持啦。
+我们需要借助第三方的软件来实现提醒功能，这里选择的软件是 Tasker ([官网地址](https://tasker.joaoapps.com/))。这个软件的功能和 iOS 的捷径差不多，但比捷径要强大得多，毕竟是在比较开放的 Android 系统。这个软件在 [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) 上售价 2.99 刀，在国内[豌豆荚](https://www.wandoujia.com/apps/237829)等市场能免费下载，不过还是希望大家如果有能力支持正版的话就尽量支持啦。
 
 在说明如何实现之前，我想先介绍一下这个软件。软件分为初学者模式和高级玩家模式，可以在首选项中调整，不过能看我这篇文章的一般都是初学者啦，我也是初学者，所以就在初学者模式下讲解了。打开软件可以看到有三个 Tab ，分别是“配置文件”，“任务”和“场景”，场景可以不用管，主要是前两个。在初学的时候，整个软件可以理解成 IF This Then That ，其中的 This 就是配置文件，That 就是任务。配置文件就是执行任务的条件，当符合条件时，就执行任务；任务就是具体的操作细节。一个配置文件至少要有一个任务，可以有多个任务，任务可以没有配置文件对应（有点绕，动手就容易懂了）。
 
