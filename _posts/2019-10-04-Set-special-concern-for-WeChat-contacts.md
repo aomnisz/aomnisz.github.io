@@ -23,7 +23,7 @@ tags:
 
 首先要取消掉微信的提示音和振动，我的小米手机可能有点不一样，大致就是：微信APP -> 我 -> 设置 -> 新消息提醒 -> 声音与振动。如下图所示。
 
-![WeChat-settings](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/WeChat-settings-min.png)
+![WeChat-settings](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/WeChat-settings-min.png)
 
 ### 2.2 Tasker APP
 
@@ -31,7 +31,7 @@ tags:
 
 在说明如何实现之前，我想先介绍一下这个软件。软件分为初学者模式和高级玩家模式，可以在首选项中调整，不过能看我这篇文章的一般都是初学者啦，我也是初学者，所以就在初学者模式下讲解了。打开软件可以看到有三个 Tab ，分别是“配置文件”，“任务”和“场景”，场景可以不用管，主要是前两个。在初学的时候，整个软件可以理解成 IF This Then That ，其中的 This 就是配置文件，That 就是任务。配置文件就是执行任务的条件，当符合条件时，就执行任务；任务就是具体的操作细节。一个配置文件至少要有一个任务，可以有多个任务，任务可以没有配置文件对应（有点绕，动手就容易懂了）。
 
-![Tasker-APP](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-APP-min.png)
+![Tasker-APP](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-APP-min.png)
 
 那么回到实现来，我的需求可以翻译成，当符合“有来自女朋友的微信信息”这个条件时，就执行“发出提示音并振动”这个任务。因为配置文件必须有任务对应，所以我先建任务。
 
@@ -39,13 +39,13 @@ tags:
 
 切换到“任务” Tab ，点击右下角的加号“+”，就会要求输入“新任务名称”，这里就填“女朋友专属微信提醒”吧。新的任务需要添加操作，依然是点右下角的加号，就会出现一个弹窗，里面有特别特别多的选项，但不必去找，在搜索栏中输入“振动”，就出来了。然后设置好振动时长（单位是毫秒），返回，一个操作就新建完成了。操作如下图所示。
 
-![Tasker-Add-tasks](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-tasks-min.png)
+![Tasker-Add-tasks](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-tasks-min.png)
 
 ### 2.4 Tasker 中添加声音提醒
 
 如果希望声音提醒和振动一起来，可以在同一个任务中继续添加操作（也可以新建一个任务）。依然是点击右下角的加号按钮，同样是直接搜索“播放铃声”。然后类型选择“通知”（这里随便选都没问题好像），接着在声音那一栏，点击右边的放大镜符号，去找到自己想要给女朋友的专属铃声。我的不知道为什么选了没反应，就算了，当然也没有铃声了呜呜呜。操作如下图所示。
 
-![Tasker-Add-ringtone-action](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-ringtone-action-min.png)
+![Tasker-Add-ringtone-action](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-ringtone-action-min.png)
 
 ### 2.5 Tasker 中新增配置文件
 
@@ -55,7 +55,7 @@ tags:
 
 这样只有女朋友发微信消息过来，才会触发这个配置文件了。再按返回退出配置文件的编辑，这时会要求选择一个任务，之前说了一个配置文件至少要有一个任务，如果没有的话，这个配置文件就会被自动删掉，这里选择之前创建的“女朋友专属微信提醒”任务就行。
 
-![Tasker-Add-profiles](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-profiles-min.png)
+![Tasker-Add-profiles](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-profiles-min.png)
 
 至此，微信的特别关心提醒就完成啦。
 
@@ -65,7 +65,7 @@ tags:
 
 小米手环可以设置接受手机的通知，需要在 “小米运动” APP 中设置。打开小米运动APP，沿着路径找到添加需要通知的应用的地方：我的 -> 我的设备（选择小米手环） -> APP通知提醒 -> 管理应用。在管理应用中将 Tasker 的勾选上，这样当有来自 Tasker 的通知时，手环也会一起提醒。
 
-![Mi-Band-settings](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Mi-Band-settings-min.png)
+![Mi-Band-settings](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Mi-Band-settings-min.png)
 
 ### 3.2 让 Tasker 发出通知
 
@@ -73,11 +73,11 @@ tags:
 
 不过这样的通知需要去手动清理，为了让它自动消失，我加上了“等待”和“通知取消”这两个操作，在发出通知 10s 之后就将通知清掉。这样我既能在手环收到提醒，又不用手动清理通知，美滋滋。
 
-![Tasker-Add-notify-action-min](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-notify-action-min.png)
+![Tasker-Add-notify-action-min](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Tasker-Add-notify-action-min.png)
 
 最后，来一张效果图吧！
 
-![Mi-Band-Notification](/assets/2019-10-04-Set-special-concern-for-WeChat-contacts/Mi-Band-Notification-min.png)
+![Mi-Band-Notification](https://img4blog-1252202799.cos.ap-guangzhou.myqcloud.com/aomnisz/2019-10-04-Set-special-concern-for-WeChat-contacts/Mi-Band-Notification-min.png)
 
 ## 4. 后记
 
