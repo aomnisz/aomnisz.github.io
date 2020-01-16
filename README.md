@@ -10,12 +10,19 @@ Or everything : )
 
 First, you need to install Ruby and Jekyll, see [Installation](https://jekyllrb.com/docs/installation/) for details.
 
+Because of the GFW, Chinese users may need to change the software source : )
+
+```
+bundle config mirror.https://rubygems.org https://mirrors.ustc.edu.cn/rubygems/
+```
+
 Then, run the commands below:
 
 ```
 git clone https://github.com/aomnisz/aomnisz.github.io.git
 cd aomnisz.github.io/
-bundle install --path vendor/bundle
+bundle config set path 'vendor/bundle'
+bundle install
 bundle exec jekyll serve
 ```
 
